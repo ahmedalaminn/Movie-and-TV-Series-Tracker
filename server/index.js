@@ -7,6 +7,15 @@ const userRoutes = require("./routes/users");
 const authRoutes = require("./routes/auth");
 const { User } = require('./models/user.js');
 
+// vercel deployment
+app.use(cors(
+    {
+        origin: ["https://deploy-mern-1whq.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
+
 // database connection
 connection();
 
@@ -28,12 +37,11 @@ app.get('/getUser', (req, res) => {
 // Add to watchlist route
 app.post('/addWatchlist', async (req, res) => {
     try {
-        const user = await User.findOne(); // Adjust this if you have a specific criteria
+        const user = await User.findOne(); 
         if (!user) return res.status(404).json({ message: 'User not found' });
 
         const { imdbID, name, type } = req.body;
         
-        // Add to user's watchlist
         user.watchlist.push({ imdbID, name, type });
         await user.save();
 
