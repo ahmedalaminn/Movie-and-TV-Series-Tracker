@@ -14,7 +14,7 @@ const Login = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = `${process.env.REACT_APP_API_URL}/api/auth`;
+			const url = `https://entertainment-watchlist.vercel.app/api/users/api/auth`;
 			const { data: res } = await axios.post(url, data);
 			localStorage.setItem("token", res.data);
 			window.location = "/";

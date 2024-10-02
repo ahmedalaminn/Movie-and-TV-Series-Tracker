@@ -9,7 +9,7 @@ const Main = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/getUser`)
+        axios.get(`https://entertainment-watchlist.vercel.app/getUser`)
             .then(response => {
                 const userData = response.data[0]; 
                 setUser(userData);
