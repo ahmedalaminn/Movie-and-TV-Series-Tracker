@@ -78,7 +78,7 @@ const Main = () => {
                                 </div>
                             ))
                     ) : (
-                        <p>No movies in watchlist</p>
+                        <p></p>
                     )}
                 </div>
 
@@ -94,7 +94,7 @@ const Main = () => {
                                 </div>
                             ))
                     ) : (
-                        <p>No series in watchlist</p>
+                        <p></p>
                     )}
                 </div>
     
