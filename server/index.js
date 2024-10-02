@@ -11,7 +11,7 @@ const { User } = require('./models/user.js');
 connection();
 
 // middlewares
-app.use(bodyParser.json()); app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(cors());
 
 // routes
