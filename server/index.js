@@ -27,10 +27,12 @@ const allowCors = (fn) => async (req, res) => {
 
 // Express middleware
 app.use(express.json());
+app.use(allowCors);
 
-// Apply CORS to the routes
-app.use("/api/users", allowCors(userRoutes));
-app.use("/api/auth", allowCors(authRoutes));
+// routes
+app.use("/api/users", userRoutes);
+app.use("/api/auth", authRoutes);
+
 
 // Fetching user
 app.get('/getUser', allowCors(async (req, res) => {
