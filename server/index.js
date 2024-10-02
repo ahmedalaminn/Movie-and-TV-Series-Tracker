@@ -10,9 +10,15 @@ const { User } = require('./models/user.js');
 // Database connection
 connection();
 
-// Express middleware
+// Middleware
 app.use(express.json());
-app.use(cors())
+const corsOptions = {
+    origin: 'https://entertainment-watchlist-frontend.vercel.app', // Adjust as per your frontend URL
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization']
+};
+app.use(cors(corsOptions));
 
 
 // Routes
