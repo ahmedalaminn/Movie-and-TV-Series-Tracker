@@ -9,7 +9,7 @@ const Main = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8080/getUser')
+        axios.get(`${process.env.REACT_APP_API_URL}/getUser`)
             .then(response => {
                 const userData = response.data[0]; 
                 setUser(userData);
@@ -47,7 +47,7 @@ const Main = () => {
                 type: Type 
             };
     
-            const url = "http://localhost:8080/addWatchlist"; 
+            const url = `${process.env.REACT_APP_API_URL}/addWatchlist`;
             await axios.post(url, payload);
             alert('Movie added to watchlist!');
         } catch (error) {
