@@ -12,7 +12,11 @@ connection();
 
 // middlewares
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: 'your-frontend-url', 
+    methods: 'GET,POST,PUT,DELETE',
+    credentials: true,
+  }));
 
 // routes
 app.use("/api/users", userRoutes);
