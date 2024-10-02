@@ -13,7 +13,7 @@ connection();
 // middlewares
 app.use(express.json());
 app.use(cors({
-    origin: 'your-frontend-url', 
+    origin: 'https://entertainment-watchlist-frontend.vercel.app', 
     methods: 'GET,POST,PUT,DELETE',
     credentials: true,
   }));
