@@ -47,7 +47,7 @@ const Main = () => {
                 type: Type 
             };
     
-            const url = `${process.env.REACT_APP_API_URL}/addWatchlist`;
+            const url = `https://entertainment-watchlist.vercel.app/addWatchlist`;
             await axios.post(url, payload);
             alert('Movie added to watchlist!');
         } catch (error) {
