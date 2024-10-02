@@ -25,6 +25,10 @@ app.get('/getUser', (req, res) => {
         .catch(err => res.json(err));
 });
 
+app.get('/', (req, res) => {
+    res.send('API is running...'); // confirming vercel connection...
+});
+
 // Add to watchlist route
 app.post('/addWatchlist', async (req, res) => {
     try {
